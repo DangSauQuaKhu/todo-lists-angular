@@ -4,15 +4,17 @@ import { TodoItem } from '../interfaces/todo-item';
 @Component({
   selector: 'app-list-manager',
   template: `
-  
-  <h1 *ngIf="userLoggedIn">Welcome guys!</h1>
-  <app-input-button-unit (submit)= "addItem($event)"></app-input-button-unit>
-  <ul>
-  <li *ngFor="let TodoItem of todoList" >
-  <app-todo-item [item]= "TodoItem" ></app-todo-item>
-  </li>
-  </ul>
+  <div class="todo-app">
+    <app-input-button-unit (submit)="addItem($event)"></app-input-button-unit>
+
+    <ul>
+      <li *ngFor="let todoItem of todoList">
+        <app-todo-item [item]="todoItem"></app-todo-item>
+      </li>
+    </ul>
+  </div>
 `,
+  styleUrls: ['./list-manager.component.css'],
 })
 export class ListManagerComponent implements OnInit {
   constructor() {}
