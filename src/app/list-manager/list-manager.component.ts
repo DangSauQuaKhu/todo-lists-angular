@@ -26,9 +26,8 @@ export class ListManagerComponent implements OnInit {
   }
   title = 'todo-list';
 
-  // addItem(value: string) {
-  //   console.log(value);
-  //   this.todoList.push({ title: value });
-  // }
-  // userLoggedIn = 1;
+  addItem(value: string): void {
+    // console.log(value);
+    this.todoListService.addItem({ title: value });
+  }
 }
