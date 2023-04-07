@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
   <app-input-button-unit></app-input-button-unit>
   <ul>
   <li *ngFor="let TodoItem of todoList" >
-  {{TodoItem.title}}
+  <app-todo-item [item]= "TodoItem" ></app-todo-item>
   </li>
   </ul>
 `,
